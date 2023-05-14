@@ -6,7 +6,7 @@ export const makeIntro = (name, mbti) => {
 
   // 여기다 코드를 작성하세요.
   let introduce = '';
-
+  introduce = introduce + " " + name + " " + mbti;
   return introduce;
 };
 
@@ -18,6 +18,12 @@ export const assign2 = (arr, divisor) => {
 
   // 여기에 코드를 작성하세요.
   let answer = [];
-
+  let count = 0;
+  for(let element of arr){
+    if(element%divisor==0) continue;
+    answer[count++] = element;
+  }
+  if(count > 0) answer.sort();
+  else answer = ["없어요!"];
   return answer;
 };
